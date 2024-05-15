@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "intents",
+  "info": {
+    "singularName": "intent",
+    "pluralName": "intents",
+    "displayName": "intents",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "intent": {
+      "type": "string"
+    },
+    "chat_bot_model": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::chat-bot-model.chat-bot-model",
+      "inversedBy": "intents"
+    },
+    "reqs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::req.req",
+      "mappedBy": "intent"
+    },
+    "responses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::response.response",
+      "mappedBy": "intent"
+    }
+  }
+}

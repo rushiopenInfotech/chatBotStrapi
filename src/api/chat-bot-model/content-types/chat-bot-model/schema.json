@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "chat_bot_models",
+  "info": {
+    "singularName": "chat-bot-model",
+    "pluralName": "chat-bot-models",
+    "displayName": "ChatBotModel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "intents": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::intent.intent",
+      "mappedBy": "chat_bot_model"
+    }
+  }
+}
